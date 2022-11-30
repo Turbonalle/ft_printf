@@ -6,13 +6,11 @@
 /*   By: jbagger <jbagger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 16:31:41 by jbagger           #+#    #+#             */
-/*   Updated: 2022/11/26 08:46:16 by jbagger          ###   ########.fr       */
+/*   Updated: 2022/11/30 10:14:43 by jbagger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdarg.h>
-#include <unistd.h>
-#include <stdio.h>
+#include "../includes/ft_printf.h"
 
 int	ft_putchar_len(char c)
 {
@@ -85,7 +83,7 @@ int	ft_check(char c, int res, va_list list)
 int ft_printf(const char *str, ...)
 {
 	unsigned int	i;
-	unsigned int	res;
+	int	res;
 	va_list 		list;
 
 	va_start(list, str);
@@ -109,22 +107,3 @@ int ft_printf(const char *str, ...)
 	va_end(list);
 	return (res);
 }
-
-// int main()
-// {
-// 	char c = 'X';
-// 	char *s = "This is a string";
-// 	int d = -123;
-// 	unsigned int u = 1234567890;
-// 	int result;
-
-// 	ft_printf("-------ft_printf:-------\n");
-// 	result = ft_printf("c = '%c'\ns = '%s'\nd = '%d'\ni = '%i'\nx = '%x'\nX = '%X'\np = '%p'\nu = '%u'\n%%\n", c, s, d, d, d, d, &d, u);
-// 	printf("result = %d\n", result);
-
-// 	printf("\n--------printf:--------\n");
-// 	result = printf("c = '%c'\ns = '%s'\nd = '%d'\ni = '%i'\nx = '%x'\nX = '%X'\np = '%p'\nu = '%u'\n%%\n", c, s, d, d, d, d, &d, u);
-// 	printf("result = %d\n", result);
-
-// 	return (0);
-// }
