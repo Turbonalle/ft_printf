@@ -1,16 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_printf_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbagger <jbagger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/25 11:38:02 by jbagger           #+#    #+#             */
-/*   Updated: 2022/11/14 11:33:51 by jbagger          ###   ########.fr       */
+/*   Created: 2022/12/01 14:10:46 by jbagger           #+#    #+#             */
+/*   Updated: 2022/12/01 14:15:46 by jbagger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isprint(int c)
+int	ft_putchar_len(char c)
 {
-	return (c >= 32 && c <= 126);
+	write(1, &c, 1);
+	return (1);
+}
+
+int	ft_putstr_len(char *s)
+{
+	int	i;
+
+	i = 0;
+	if (s)
+	{
+		while (s[i] != '\0')
+			i += ft_putchar_len(s[i]);
+		return (i);
+	}
+	else
+	{
+		i += ft_putstr_len("(null)");
+		return (i);
+	}
+	return (0);
 }

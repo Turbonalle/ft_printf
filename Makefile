@@ -1,19 +1,20 @@
 NAME = libftprintf.a
 MAIN = main.c
 EXE = exe.out
-SRC = sources/ft_printf.c
+SRC = ft_printf.c
 OBJECTS = *.o
-HEADERS = includes/ft_printf.h
+HEADERS = ft_printf.h
+FLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
 
 $(NAME):
-	@cc -Wall -Wextra -Werror -I $(HEADERS) -c $(SRC)
+	@cc -I $(HEADERS) -c $(SRC)
 	@ar rcs $(NAME) $(OBJECTS)
 	@echo "Ft_printf is now compiled, good sir!"
 
 run:
-	@gcc -Wall -Wextra -Werror $(MAIN) $(NAME) -o $(EXE)
+	@gcc $(MAIN) $(NAME) -o $(EXE)
 	@./$(EXE)
 
 clean: $(OBJECTS)

@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jbagger <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: jbagger <jbagger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/08 13:04:26 by jbagger           #+#    #+#             */
-/*   Updated: 2022/11/08 13:04:41 by jbagger          ###   ########.fr       */
+/*   Created: 2022/11/23 11:26:55 by jbagger           #+#    #+#             */
+/*   Updated: 2022/12/01 14:14:07 by jbagger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
+# include <stdarg.h>
+# include <unistd.h>
+# include <stdio.h>
 
-t_list	*ft_lstnew(void *content)
-{
-	t_list	*new;
+int	ft_printf(const char *str, ...);
+int	ft_putchar_len(char c);
+int	ft_putstr_len(char *s);
 
-	new = (t_list *)malloc(sizeof(t_list));
-	if (!new)
-		return (NULL);
-	new->content = content;
-	new->next = NULL;
-	return (new);
-}
+#endif
