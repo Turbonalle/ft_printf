@@ -1,15 +1,15 @@
 NAME = libftprintf.a
 MAIN = main.c
 EXE = exe.out
-SRC = ft_printf.c
+SRC = ft_printf.c ft_printf_utils.c
 OBJECTS = *.o
-HEADERS = ft_printf.h
+HEADER = ft_printf.h
 FLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
 
 $(NAME):
-	@cc -I $(HEADERS) -c $(SRC)
+	@cc -I $(HEADER) -c $(SRC)
 	@ar rcs $(NAME) $(OBJECTS)
 	@echo "Ft_printf is now compiled, good sir!"
 

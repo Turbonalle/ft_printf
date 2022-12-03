@@ -6,9 +6,11 @@
 /*   By: jbagger <jbagger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 14:10:46 by jbagger           #+#    #+#             */
-/*   Updated: 2022/12/01 14:15:46 by jbagger          ###   ########.fr       */
+/*   Updated: 2022/12/03 13:16:41 by jbagger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "ft_printf.h"
 
 int	ft_putchar_len(char c)
 {
